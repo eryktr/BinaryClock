@@ -7,12 +7,17 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.Group?>
 <BorderPane fx:controller="com.eryk.trzeciakiewicz.binaryclock.Controller"
-            xmlns:fx="http://javafx.com/fxml">
+            xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600">
     <top>
         <MenuBar fx:id="testMenu">
             <menus>
-                <Menu text = "menu">
+                <Menu text="menu">
                     <items>
                         <MenuItem text="test"></MenuItem>
                     </items>
@@ -20,5 +25,46 @@
             </menus>
         </MenuBar>
     </top>
+
+    <center>
+        <HBox alignment="CENTER">
+            <children>
+                <HBox spacing="50">
+
+                        <VBox alignment="BOTTOM_CENTER" spacing="10">
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                        </VBox>
+                        <VBox alignment="BOTTOM_CENTER" spacing="10">
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                        </VBox>
+
+                        <VBox alignment="BOTTOM_CENTER" spacing="10">
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                            <Circle radius="40"/>
+                        </VBox>
+
+                </HBox>
+            </children>
+        </HBox>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER">
+            <Label style="-fx-font-size: 20" text="Time: " />
+        </HBox>
+    </bottom>
+
 
 </BorderPane>
