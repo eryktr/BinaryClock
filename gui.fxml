@@ -12,6 +12,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.Group?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <BorderPane fx:controller="com.eryk.trzeciakiewicz.binaryclock.Controller"
             xmlns:fx="http://javafx.com/fxml" prefWidth="800" prefHeight="600">
     <top>
@@ -62,7 +65,7 @@
 
     <bottom>
         <HBox alignment="CENTER">
-            <Label style="-fx-font-size: 20" text="Time: " />
+            <Text fx:id="text" style="-fx-font-size: 20" text="Time" />
         </HBox>
     </bottom>
 
