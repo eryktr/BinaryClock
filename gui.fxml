@@ -1,0 +1,24 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<BorderPane fx:controller="com.eryk.trzeciakiewicz.binaryclock.Controller"
+            xmlns:fx="http://javafx.com/fxml">
+    <top>
+        <MenuBar fx:id="testMenu">
+            <menus>
+                <Menu text = "menu">
+                    <items>
+                        <MenuItem text="test"></MenuItem>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+</BorderPane>
