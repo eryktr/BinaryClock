@@ -34,28 +34,15 @@
             <children>
                 <HBox spacing="50">
 
-                        <VBox alignment="BOTTOM_CENTER" spacing="10">
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
+                        <VBox alignment="BOTTOM_CENTER" spacing="10" fx:id="hourVBox">
+
                         </VBox>
-                        <VBox alignment="BOTTOM_CENTER" spacing="10">
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
+                        <VBox alignment="BOTTOM_CENTER" spacing="10" fx:id="minuteVBox">
+
                         </VBox>
 
-                        <VBox alignment="BOTTOM_CENTER" spacing="10">
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
-                            <Circle radius="40"/>
+                        <VBox alignment="BOTTOM_CENTER" spacing="10" fx:id="secondVBox">
+
                         </VBox>
 
                 </HBox>
