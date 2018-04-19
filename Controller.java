@@ -137,10 +137,46 @@ public class Controller
         this.minuteCircles = minuteCircles;
         this.secondCircles = secondCircles;
 
+        setInitialTime(hourCircles, minuteCircles, secondCircles);
+        //blinker.start();
+        //minuteBlinker.start();
+    }
 
-        blinker.start();
-        minuteBlinker.start();
+
+    public void setInitialTime(Circle[] hourCircles, Circle[] minuteCircles, Circle[] secondCircles)
+    {
+        Calendar cal = Calendar.getInstance();
+        int seconds = cal.get(Calendar.SECOND);
+        int minutes = cal.get(Calendar.MINUTE);
+        int hours = cal.get(Calendar.HOUR_OF_DAY);
+        boolean[][] isActive = Utility.ShouldBeActive(hours, minutes, seconds);
+        boolean[] isHourActive = isActive[0];
+        boolean[] isMinuteActive = isActive[1];
+        boolean[] isSecondActive = isActive[2];
+        for(int i = 0; i < isHourActive.length; i++)
+        {
+            if(isHourActive[i])
+            {
+                hourCircles[i].setFill(Color.NAVY);
+            }
+        }
+
+        for(int i = 0; i < isMinuteActive.length; i++)
+        {
+            if(isMinuteActive[i])
+            {
+                minuteCircles[i].setFill(Color.GREEN);
+            }
+
+            if(isSecondActive[i])
+            {
+                secondCircles[i].setFill(Color.RED);
+            }
+        }
 
 
     }
+
 }
+
+
