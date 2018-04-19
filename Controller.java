@@ -86,8 +86,8 @@ public class Controller
             {
                 try
                 {
-                    Color color = (secondCircles[Utility.powerIndices[0]].getFill() == Color.WHITE) ? (Color.RED) : (Color.WHITE);
-                    secondCircles[Utility.powerIndices[0]].setFill(color);
+
+                    setInitialTime(hourCircles, minuteCircles, secondCircles);
                     wait(1000);
 
                 }
@@ -138,7 +138,7 @@ public class Controller
         this.secondCircles = secondCircles;
 
         setInitialTime(hourCircles, minuteCircles, secondCircles);
-        //blinker.start();
+        blinker.start();
         //minuteBlinker.start();
     }
 
@@ -159,6 +159,10 @@ public class Controller
             {
                 hourCircles[i].setFill(Color.NAVY);
             }
+            else
+            {
+                hourCircles[i].setFill(Color.WHITE);
+            }
         }
 
         for(int i = 0; i < isMinuteActive.length; i++)
@@ -167,10 +171,18 @@ public class Controller
             {
                 minuteCircles[i].setFill(Color.GREEN);
             }
+            else
+            {
+                minuteCircles[i].setFill(Color.WHITE);
+            }
 
             if(isSecondActive[i])
             {
                 secondCircles[i].setFill(Color.RED);
+            }
+            else
+            {
+                secondCircles[i].setFill(Color.WHITE);
             }
         }
 

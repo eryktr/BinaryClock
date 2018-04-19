@@ -14,6 +14,7 @@ public class Utility
 
         for(int power : hourPowerIndices)
         {
+            hours = hours % 12;
             int activeIndex = hourPowerIndices[power];
             activeHours[activeIndex] = hours - (int)Math.pow(2, power) >= 0;
             if(activeHours[activeIndex])
