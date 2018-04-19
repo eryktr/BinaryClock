@@ -7,12 +7,7 @@ import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.Clock;
-import java.time.Instant;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
+
 import java.util.Calendar;
 
 
@@ -49,36 +44,8 @@ public class Controller
         }
     }
 
-    public class HourBlinker extends Thread
-    {
-        public synchronized void run()
-        {
 
-        }
-    }
-
-    public class MinuteBlinker extends Thread
-    {
-        public synchronized void run()
-        {
-            while (true)
-            {
-                try
-                {
-                    Circle target = minuteCircles[Utility.powerIndices[0]];
-                    Color fill = (target.getFill() == Color.GREEN) ? (Color.WHITE) : (Color.GREEN);
-                    target.setFill(fill);
-                    wait(10000);
-                }
-                catch(InterruptedException ex)
-                {
-                    System.out.println("Error");
-                }
-            }
-        }
-    }
-
-    public class SecondBlinker extends Thread
+    public class ControlThread extends Thread
     {
         public synchronized void run()
         {
@@ -103,8 +70,7 @@ public class Controller
     public void initialize()
     {
         Timer timer = new Timer();
-        SecondBlinker blinker = new SecondBlinker();
-        MinuteBlinker minuteBlinker = new MinuteBlinker();
+        ControlThread blinker = new ControlThread();
         timer.start();
         Circle[] hourCircles = new Circle[4];
         Circle[] minuteCircles = new Circle[6];
@@ -139,7 +105,6 @@ public class Controller
 
         setInitialTime(hourCircles, minuteCircles, secondCircles);
         blinker.start();
-        //minuteBlinker.start();
     }
 
 
